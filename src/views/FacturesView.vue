@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>factures</p>
+    {{ factures }}
   </div>
 </template>
 
