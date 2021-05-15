@@ -1,7 +1,9 @@
 <template>
   <div>
     <p>Dashboard</p>
+    <button @click="setState">set state</button>
     <button @click="getState">get state</button>
+    {{ getState }}
   </div>
 </template>
 
@@ -12,12 +14,12 @@ export default {
   name: "DashboardView",
   setup() {
     const store = useStore();
-    console.log(store);
-    // const factures = computed(() => store.getters["dashboardModule/getFactures"]);
+    const getState = store.getters["dashboardModule/getStateData"];
 
     const url = "http://localhost:8080/factures";
     return { 
-      getState: () => store.dispatch('dashboardModules/getData', { url })
+      setState: () => store.dispatch('dashboardModules/getData', { url }),
+      getState
     };
   }
 };
