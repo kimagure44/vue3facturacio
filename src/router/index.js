@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AuthView from "../views/AuthView.vue";
 import DashboardView from "../views/DashboardView.vue";
+import FacturesView from "../views/FacturesView.vue";
 
 const routes = [
   {
     path: '/',
-    name: 'auth',
-    component: AuthView
-  },
-  {
-    path: '/dashboard',
     name: 'dashboard',
     component: DashboardView
+  },
+  {
+    path: '/factures',
+    name: 'factures',
+    component: FacturesView
   }
 ];
 
