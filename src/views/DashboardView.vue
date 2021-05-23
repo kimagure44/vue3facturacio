@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>Dashboard</p>
-    <router-link to="/factures">factures</router-link>
+    <router-link @click="getFactures" to="/factures">factures</router-link>
   </div>
 </template>
 
@@ -13,7 +13,19 @@ export default {
     const store = useStore();
 
     const url = "http://localhost:8080/factures";
-    store.dispatch('dashboardModules/getData', { url });
+    // store.dispatch('dashboardModules/getData', { url });
+
+    async function getFactures() {
+        try {
+            await store.dispatch('dashboardModules/getData', { url });
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    return {
+        getFactures
+    }
   }
 };
 </script>

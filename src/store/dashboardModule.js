@@ -13,14 +13,19 @@ apiService.post("factures", data, config)
 export default {
     namespaced: true,
     state: {
-        factures: []
+        data: {
+            factures:  null,
+            clients: null
+        }
     },
     getters: {
-        getFactures: state => state.factures
+        getFactures: state => state.data.factures,
+        getClients: state => state.data.clients
     },
     mutations: {
         setData(state, payload) {
-            state.factures = payload.factures;
+            state.data = {...payload};
+            // state.factures = payload.factures;
         }
     },
     actions: {

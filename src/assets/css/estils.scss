@@ -1,0 +1,9 @@
+// variables scss
+$color1: #00758D;
+
+#topbar .bi,
+#topbar a,
+#sidebar .bi,
+#sidebar .nav-item span {
+    color: $color1;
+}
